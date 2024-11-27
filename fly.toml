@@ -19,6 +19,9 @@ console_command = '/rails/bin/rails console'
   min_machines_running = 0
   processes = ['app']
 
+[deploy]
+  release_command = "bundle exec rake db:migrate"
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
