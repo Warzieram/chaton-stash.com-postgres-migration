@@ -6,7 +6,7 @@
       <tr>
         <th>Produit</th>
         <th>Prix</th>
-        <!-- <th>Quantité</th> -->
+        <%# <th>Quantité</th> %>
         <th>Actions</th>
       </tr>
     </thead>
@@ -27,7 +27,7 @@
     <h3>Total : <%= number_to_currency(@total_price) %></h3>
   </div>
 
-  <%= button_to 'Passer commande', create_order_path, method: :post, class: 'btn btn-primary' %> -->
+  <%= button_to 'Passer commande', create_order_path, method: :post, class: 'btn btn-primary' %>
   <%= button_to 'Vider le panier', cart_path, method: :delete, class: 'btn btn-danger', data: { confirm: 'Êtes-vous sûr de vouloir vider le panier ?' } %>
 <% else %>
   <p>Votre panier est vide.</p>

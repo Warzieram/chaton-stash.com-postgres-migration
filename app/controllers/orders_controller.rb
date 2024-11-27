@@ -1,22 +1,27 @@
 class OrdersController < ApplicationController
+  before_action :set_cart, only: [:create]
   before_action :set_order, except: [:create, :index]
 
   def index
-    @orders = Current.session.user.orders.includes(:items)
+    @orders = Current.session.user.orders
   end
 
   def show
-    @order = Current.session.user.orders.find(params[:id])
+    # @order = Current.session.user.orders.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   # Créer une commande à partir du panier
   def create
-    @order = Current.session.user.orders.build(total: @cart.total_price, status: 'pending')  # Statut initial 'pending'
+    @order = Current.session.user.orders.build(total_price: @cart.total_price, status: 'pending')  # Statut initial 'pending'
     
     # Créer les OrderItems à partir des éléments du panier
     @cart.cart_items.each do |cart_item|
       # @order.order_items.build(item: cart_item.item, quantity: cart_item.quantity, price: cart_item.item.price)
-      @order.order_items.build(item: cart_item.item, price: cart_item.item.price)
+      @order.order_items.build(
+        item: cart_item.item, 
+        # quantity: cart_item.quantity,
+        price: cart_item.item.price)
     end
 
     if @order.save
@@ -28,6 +33,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def set_cart
+    @cart = Current.session.user.cart || Cart.create(user: Current.session.user)
+  end
 
   def set_order
     @order = Current.session.user.orders.find_by(id: params[:id]) || Current.session.user.orders.create(status: 'pending')
