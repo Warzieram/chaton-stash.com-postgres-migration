@@ -15,8 +15,8 @@
       <% @orders.each do |order| %>
         <tr>
           <td><%= order.id %></td>
-          <td><%= order.status.capitalize %></td>
-          <td><%= number_to_currency(order.total) %></td>
+          <td><%= order.status&.capitalize %></td>
+          <td><%= number_to_currency(order.total_price) %></td>
           <td><%= order.created_at.strftime('%d/%m/%Y') %></td>
           <td>
             <%= link_to 'Voir', order_path(order), class: 'btn btn-primary' %>
