@@ -17,6 +17,13 @@ Rails.application.routes.draw do
 
   post 'create_order', to: 'orders#create', as: 'create_order'
 
+  # resources :orders, only: [:index, :show, :create] do
+  #   collection do
+  #     post 'create', action: :create, as: 'create_order'
+  #   end
+  # end
+  
+
   resources :checkout
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
