@@ -1,6 +1,18 @@
-<h1><%= @item.name %></h1>
 
+<div class="item-card">
+    <h1><%= @item.name %></h1>
+    <img src="<%= @item.image_url %>">
+    <p> Description : <%= @item.description %> </p>
 
-<img src="<%= @item.image_url %>">
+    <div class="item-info">
+        <h3>Nom : <%= @item.name %></h3>
+        <p>Description : <%= @item.description %></p>
+        <p>Stock : <%= @item.stock %>
+        <p>Prix : <%= @item.price %>€</p>
+    </div>
+    <%= button_to 'Ajouter au panier', add_item_cart_path(item_id: @item.id), method: :post, class: 'button-link' %>
+</div>
 
-<p> Description : <%= @item.description %> </p>
+<br>
+
+<%= link_to "Retour au catalogue", items_path, class: "button-link" %>

@@ -302,10 +302,6 @@ main {
   transition: transform 0.2s; 
 }
 
-.item-card:hover {
-  transform: translateY(-5px); 
-}
-
 .item-image {
   width: 100%;
   height: 150px;
