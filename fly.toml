@@ -22,6 +22,10 @@ console_command = '/rails/bin/rails console'
 [deploy]
   release_command = "bundle exec rake db:migrate"
 
+[mount]
+  source = "db_volume"
+  destination = "/mtn/db_volume"
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
