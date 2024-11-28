@@ -25,6 +25,7 @@ test:
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
+  url: "postgres://u180n8g4imd5cq:p72c5e376e09be76afac4f4ea82dc51422ac84cb87e565482c82c37ae7deaa30f@cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dbd0opopakmd8i"
   primary:
     <<: *default
     database: chaton_stash_production
