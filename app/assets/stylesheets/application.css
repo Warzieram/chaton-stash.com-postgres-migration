@@ -244,3 +244,44 @@ main {
   text-decoration: underline;
 }
 
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.banner-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-text {
+  position: absolute; 
+  top: 40%; 
+  left: 50%; 
+  text-align: center;
+  color: white;
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 1rem; 
+}
