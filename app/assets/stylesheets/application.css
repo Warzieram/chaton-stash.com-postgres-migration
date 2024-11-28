@@ -285,3 +285,45 @@ main {
 .banner-text p {
   font-size: 1rem; 
 }
+
+.catalogue-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); 
+  gap: 150px; 
+  padding: 75px;
+}
+
+.item-card {
+  background-color: #f0f0f0; 
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s; 
+}
+
+.item-card:hover {
+  transform: translateY(-5px); 
+}
+
+.item-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; 
+  border-bottom: 1px solid #ddd;
+}
+
+.item-info {
+  padding: 10px;
+}
+
+.item-info a {
+  text-decoration: none;
+  color: black
+}
+
+.item-info a:hover {
+  color: #8aa7b3;
+}
+
+
