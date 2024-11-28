@@ -244,3 +244,82 @@ main {
   text-decoration: underline;
 }
 
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.banner-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-text {
+  position: absolute; 
+  top: 40%; 
+  left: 50%; 
+  text-align: center;
+  color: white;
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 1rem; 
+}
+
+.catalogue-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); 
+  gap: 150px; 
+  padding: 75px;
+}
+
+.item-card {
+  background-color: #f0f0f0; 
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s; 
+}
+
+.item-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; 
+  border-bottom: 1px solid #ddd;
+}
+
+.item-info {
+  padding: 10px;
+}
+
+.item-info a {
+  text-decoration: none;
+  color: black
+}
+
+.item-info a:hover {
+  color: #8aa7b3;
+}
+
+

@@ -1,3 +1,10 @@
-<h1>Bienvenue sur Chaton Stash</h1>
+<div class="banner">
+  <%= link_to items_path, class: "banner-link" do %>
+    <%= image_tag "baner.jpg", class: "banner-image" %>
+    <div class="banner-text">
+      <h1>Bienvenue sur Chaton-stash ! </h1>
+      <p>Cliquez pour découvrir notre catalogue !</p>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to "Catalogue", items_path, class: "nav-link" %>
